@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+
+
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="meeting-single-item">
+                <div class="thumb">
+                  <div class="price">
+                    <span>{{course.price}}</span>
+                  </div>
+                  
+                  <img src="{{course.get_img}}" alt="">
+                </div>
+                <div class="down-content">
+                  <h4>{{course.name}}</h4>
+                  
+                  <p class="description">    
+                {{course.about}}
+                </p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="main-button-red">
+                <a href="{% url "galaktika:contact" %}">Yozilish</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </section>
+
+ {% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+
+<section class="apply-now" id="apply">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 align-self-center">
+        <div class="row">
+          
+          <div class="col-lg-12">
+            <div class="item">
+              <img src="{% static 'galaktika/assets/images/logo.png' %}" alt="hello">
+              <h3>Birgalikda o'rgan</h3>
+              <p>2009 yildan beri siz bilan birga</p>
+              <div class="main-button-yellow">
+                <a href="{% url "galaktika:contact" %}">Bizga qo'shil</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="accordions is-first-expanded">
+          {% for fact in facts %}
+          <article class="accordion">
+            <div class="accordion-head">
+              <span>{{fact.welcome}}</span>
+              <span class="icon">
+                <i class="icon fa fa-chevron-right"></i>
+              </span>
+            </div>
+            <div class="accordion-body">
+              <div class="content">
+                <p>{{fact.content}}</p>
+              </div>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

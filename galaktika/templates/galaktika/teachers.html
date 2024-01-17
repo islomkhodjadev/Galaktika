@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+
+
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="filters">
+                <ul>
+                  <li data-filter="*"  class="active">Barchasi</li>
+                  {% for cat in categories %}
+                  
+                  <li data-filter=".{{cat.pk}}">{{cat.name}}</li>
+
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="row grid">
+                {% for teacher in teachers %}
+                <div class="col-lg-4 templatemo-item-col all {{teacher.filial.pk}}">
+                  <div class="meeting-item">
+                    <div class="thumb">
+                      
+                      <a href="{% url "galaktika:teacher_detail" teacher.pk %}"><img src="{{teacher.get_img}}" alt=""></a>
+                    </div>
+                    <div class="down-content">
+                      
+                      <a href="{% url "galaktika:teacher_detail" teacher.pk %}"><h4>{{teacher.name}}</h4></a>
+                      <p>{{teacher.about|truncatewords:20}}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+
+
+  {%endblock %}

@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+{% if active == "index"%}
+<li><a href="{% url 'galaktika:index' %}" class="active">Uy</a></li>
+{% else %}
+<li><a href="{% url 'galaktika:index' %}">Uy</a></li>
+{% endif %}
+
+
+{% if active == "about"%}
+<li><a href="{% url 'galaktika:about'%}" class="active">Biz haqimizda</a></li>
+{% else %}
+<li><a href="{% url 'galaktika:about'%}">Biz haqimizda</a></li>
+
+{% endif %}
+
+
+{% if active == "interesting"%}
+<li><a href="{% url 'galaktika:interesting'%}" class="active">Qiziqarli</a></li>
+{% else %}
+<li><a href="{% url 'galaktika:interesting'%}">Qiziqarli</a></li>
+
+{% endif %}
+
+
+{% if active == "courses"%}
+<li><a href="{% url 'galaktika:courses' %}" class="active">Kurslar</a></li>
+{% else %}
+
+<li><a href="{% url 'galaktika:courses' %}">Kurslar</a></li>
+{% endif %}
+
+
+
+{% if active == "teachers"%}
+<li><a href="{% url 'galaktika:teachers'%}" class="active"> O'qituvchilar </a></li>
+{% else %}
+
+<li><a href="{% url 'galaktika:teachers'%}"> O'qituvchilar </a></li>
+{% endif %}
+
+
+{% if active == "contact"%}
+
+<li><a href="{% url 'galaktika:contact'%}" class="active">Biz bilan bog'lanish</a></li>
+{% else %}
+
+<li><a href="{% url 'galaktika:contact'%}">Biz bilan bog'lanish</a></li>
+
+{% endif %}
+
